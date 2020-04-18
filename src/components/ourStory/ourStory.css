@@ -1,0 +1,27 @@
+.ourStoryContainer {
+
+  display: inline-block;
+  /* margin-left: 10vh; */
+}
+div.ourStoryParagraphs {
+  display: inline;
+  width: 40%;
+
+}
+
+p {
+  font-size: 23px;
+}
+
+#instagram {
+  height: 35px;
+  width: 35px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+ a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}

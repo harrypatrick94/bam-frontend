@@ -1,0 +1,15 @@
+.footerHeading {
+  margin-bottom: 0;
+  padding: 10px 0 3px;
+  margin-left: 15px;
+}
+
+.FooterContatiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.romeDesigns {
+  display: inline-block;
+  margin-right: 15px;
+}

@@ -1,0 +1,32 @@
+.singleWineBackend {
+  margin: 100px auto;
+  height: 500px;
+  width: 500px;
+  
+}
+
+ul.editDeleteWineUL {
+  list-style-type: none;
+  padding: 0;
+}
+
+form.editDeleteWineForm {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black
+}
+
+input.editDeleteWineInput {
+  height: 30px;
+  width: 270px;
+  margin: 4px;
+  border: 1px solid black
+}
+
+input.editDeleteWineTeaxtArea {
+  vertical-align: top;
+  height: 130px;
+  width: 270px;
+  margin: 4px;
+  border: 1px solid black
+}

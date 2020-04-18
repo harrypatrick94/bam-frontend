@@ -1,0 +1,15 @@
+
+.usPageContatainer {
+  display: inline-block;
+  margin-top: -85px;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  
+  /* z-index: -1; */
+  /* width: 45%; */
+
+}
+.usImage {
+  height: 750px;
+  width: 500px;
+}

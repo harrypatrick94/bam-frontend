@@ -1,0 +1,58 @@
+.contactContainer {
+  display: inline-block;
+  /* background-color: lavender; */
+
+}
+
+form {
+  /* border: 2px solid black; */
+  /* border-radius: 7px; */
+  display: inline-block;
+  padding: 25px;
+  margin: 5px 0;
+  background-image: url('../images/formBG.png');
+  /* position: absolute; */
+}
+
+ul.formUL {
+  list-style-type: none;
+  padding: 0;
+}
+
+li.formLI {
+  margin: 5px;
+  text-align: left;
+}
+
+input {
+  margin-top: 3px;
+  margin-left: 4px;
+  font-size: 20px;
+}
+
+.contactText {
+  width: 500px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.contactTextarea {
+  vertical-align: top;
+  text-align: left;
+  width: 506px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 2px 3px;
+}
+
+.contactSubmit {
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 30px;
+  width: 50px;
+  font-size: 10px;
+}
