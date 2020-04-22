@@ -29,6 +29,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    clearForm()
     const emailToSend = {name, email, message}
     fetch('http://ec2-52-62-179-225.ap-southeast-2.compute.amazonaws.com/send',{
         method: "POST",
@@ -41,7 +42,6 @@ const Contact = () => {
     	(response) => (response.json())
        ).then((response)=>{
       if (response.status === 'success'){
-        clearForm()
       }else if(response.status === 'fail'){
         alert("Message failed to send.")
       }

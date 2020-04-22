@@ -2,7 +2,11 @@
   margin: 100px auto;
   height: 500px;
   width: 500px;
-  
+
+}
+
+li.wineList {
+  font-size: 20px;
 }
 
 ul.editDeleteWineUL {

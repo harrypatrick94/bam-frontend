@@ -17,29 +17,6 @@ li.winesLI {
 
 }
 
-/* img.wineImage {
-  margin: 20px -40px 20px 20px;
-  height: 350px;
-  width: 350px;
-} */
-.alfonzoContainer, .discoContainer, .saussisonContainer, .wineImg  {
-
-  background-size: cover;
-  margin: 20px -40px 20px 20px;
-  height: 350px;
-  width: 350px;
-  display: inline-flex;
-  flex-direction: column-reverse;
-
-}
-.wineImg:hover {
-  opacity: 0.3;
-  cursor: pointer;
-}
-.wineImg:hover + .wineDescription {
-  display: inline-block;
-}
-
 .wineDescription {
   width: 340px;
   /* z-index: -1; */
@@ -51,27 +28,48 @@ li.winesLI {
   text-align: left;
   display: none;
 }
-.alfonzoContainer, .saussisonContainer {
-  background-image: url('../images/alfonzoBM.png');
+.wineImg  {
+
+  background-size: cover;
+  margin: 20px -40px 20px 20px;
+  height: 350px;
+  width: 350px;
+  display: inline-flex;
+  flex-direction: column-reverse;
 }
 
-.discoContainer {
-  background-image: url('../images/discoBM.png');
-  /* background-color: rgba(black, 0.9); */
+@media only screen and (max-width: 600px) {
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li.winesLI {
+    margin: 30px;
+  }
+  .wineImg  {
+    background-size: cover;
+    margin: 10px -20px 10px 10px;
+    height: 270px;
+    width: 270px;
+    display: inline-flex;
+    flex-direction: column-reverse;
+  }
+
+  .wineDescription {
+    width: 260px;
+  }
+}
+
+.wineImg:hover {
+  opacity: 0.3;
+  cursor: pointer;
+}
+.wineImg:hover + .wineDescription {
+  display: inline-block;
 }
 
 .wineHeading {
   color: black;
-}
-
-p.alfonzoText, p.discoText, p.saussisonText {
-  z-index: -1;
-  font-weight: bold;
-  color: white;
-
-}
-
-div.alfonzoContainer:hover, div.discoContainer:hover, div.saussisonContainer:hover  {
-  opacity: 0.6;
-  z-index: -2;
 }

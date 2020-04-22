@@ -64,7 +64,7 @@ const SingleWine = (props) => {
       <div>
         <Update update={props}/>
         <Delete delete={props}/>
-        <Link to="/user">Back</Link>
+        <button onClick={() => props.toggledisplay()}>Back</button>
       </div>
       :
       <h1>Loading...</h1>

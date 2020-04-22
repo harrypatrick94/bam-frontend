@@ -8,8 +8,8 @@ form {
   /* border: 2px solid black; */
   /* border-radius: 7px; */
   display: inline-block;
-  padding: 25px;
-  margin: 5px 0;
+  padding: 5vh;
+  margin: 2vh 0;
   background-image: url('../images/formBG.png');
   /* position: absolute; */
 }
@@ -20,33 +20,33 @@ ul.formUL {
 }
 
 li.formLI {
-  margin: 5px;
+  margin: 1vh;
   text-align: left;
 }
 
 input {
-  margin-top: 3px;
-  margin-left: 4px;
-  font-size: 20px;
+  margin-top: 1vh;
+  /* margin-left: 1vh; */
+  font-size: 3vh;
 }
 
 .contactText {
-  width: 500px;
+  width: 70vh;
   height: 30px;
   border: 1px solid black;
   border-radius: 4px;
-  padding: 5px;
+  padding: 0.3vh;
 }
 
 .contactTextarea {
   vertical-align: top;
   text-align: left;
-  width: 506px;
-  height: 200px;
+  width: 70vh;
+  height: 30vh;
   border: 1px solid black;
   border-radius: 4px;
-  font-size: 20px;
-  padding: 2px 3px;
+  font-size: 3vh;
+  padding: 0.3vh 0.5vh;
 }
 
 .contactSubmit {
@@ -55,4 +55,32 @@ input {
   height: 30px;
   width: 50px;
   font-size: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  .contactText {
+    width: 45vh;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0.3vh;
+  }
+
+  .contactTextarea {
+    vertical-align: top;
+    text-align: left;
+    width: 45vh;
+    height: 30vh;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 3vh;
+    padding: 0.3vh 0.5vh;
+  }
+
+  form {
+      display: inline-block;
+      padding: 3vh 3vh;
+      margin: 1vh 0;
+    }
+
 }

@@ -6,3 +6,13 @@
 .landingPageContatainer {
   padding-top: 15px;
 }
+@media only screen and (max-width: 600px) {
+  .landingImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .landingPageContatainer {
+    padding-top: 0;
+  }
+}

@@ -7,7 +7,7 @@ const User = (props) => {
 
   const [displaySingle, setDisplaySingle] = useState(false)
   const [wineToDisplay, setWineToDisplay] = useState('')
-  const toggledisplay = (wine) => {
+  const toggledisplay = (wine='') => {
     setWineToDisplay(wine)
     setDisplaySingle(!displaySingle)
   }
@@ -28,13 +28,12 @@ const User = (props) => {
       {
         displaySingle
         ?
-        <SingleWine singleWine={props} wine={wineToDisplay}/>
+        <SingleWine singleWine={props} wine={wineToDisplay} toggledisplay={toggledisplay}/>
         :
         <AllWines allWines={props} toggledisplay={toggledisplay}/>
       }
       </div>
-
-      <SignOut signOut={props}/>
+      <div className="signOut"><SignOut signOut={props}/></div>
 
     </div>
   )

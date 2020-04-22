@@ -5,7 +5,7 @@ const OurStory = () => {
   return (
 
     <div className="ourStoryContainer">
-      <div className="ourStoryParagra">
+      <div className="ourStoryParagraphs">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur consectetur minima, fugit vitae. Illo illum aliquid provident, ea, eius cum placeat ab sed suscipit quisquam iure fugiat odio? Totam.
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur consectetur minima, fugit vitae. Illo illum aliquid provident, ea, eius cum placeat ab sed suscipit quisquam iure fugiat odio? Totam.

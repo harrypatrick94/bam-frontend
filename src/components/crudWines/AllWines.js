@@ -34,10 +34,9 @@ const AllWines = (props) => {
           ?
           <ul className="allWines">
             {wines.map(wine => {
-              return (<li key={wine.wineName} onClick={() => singleWine(wine.wineName)}>{wine.wineName}</li>)
+              return (<li className="wineList" key={wine.wineName} onClick={() => singleWine(wine.wineName)}>{wine.wineName}</li>)
             })
           }
-
           </ul>
           :
           <h1>Loading...</h1>

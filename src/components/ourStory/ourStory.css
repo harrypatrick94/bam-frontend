@@ -11,6 +11,11 @@ div.ourStoryParagraphs {
 
 p {
   font-size: 23px;
+  text-align: justify;
+}
+
+p.journey {
+  text-align: center;
 }
 
 #instagram {

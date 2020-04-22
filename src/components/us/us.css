@@ -4,12 +4,17 @@
   margin-top: -85px;
   margin-left: 10vh;
   margin-right: 10vh;
-  
-  /* z-index: -1; */
-  /* width: 45%; */
-
 }
 .usImage {
   height: 750px;
   width: 500px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .usImage {
+    display: none;
+  }
+  .usPageContatainer {
+    display: none;
+  }
 }
