@@ -29,7 +29,7 @@ const Wines = () => {
           {
             wines.map(wine => {
               return(
-                <li className="winesLI">
+                <li className="winesLI" key={wine.wineName}>
                   <h1>{wine.wineName}</h1>
                   <img src={wine.img} alt={wine.wineName} className="wineImg"/>
                   <p className="wineDescription">{wine.description}</p>

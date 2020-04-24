@@ -2,25 +2,17 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import ajax from '../../lib/ajax'
 import Update from './update/Update'
-import Delete from './delete/Delete'
+import Delete from '../delete/Delete'
 import "./crudWines.css"
 const SingleWine = (props) => {
-  // console.log(props);
+
   const [wine, setWine] = useState('')
-  const [id, setId] = useState('')
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
-  const [img, setImg] = useState('')
 
   // ajax call get single wine
   const getWine = () => {
 
-    console.log("gettt single wineee");
-    const wineHeader = props.wine
-
-    ajax.getSingleWine(wineHeader)
+    ajax.getSingleWine(props.match.params.wine)
       .then(res => {
-        console.log("Single wine: ", res.data[0]);
         setWine(res.data[0])
 
       })
@@ -28,27 +20,11 @@ const SingleWine = (props) => {
         console.warn(err);
       })
   }
+  const deleteWine = () => {
 
-  const handleName = (e) => {
-    const newName = e.target.value
-    setName(newName)
-    console.log(newName);
-  }
-  const handleDescription = (e) => {
-    const newDescription = e.target.value
-    setDescription(newDescription)
-    console.log(newDescription);
-  }
-  const handleImg = (e) => {
-    const newImg = e.target.value
-    setImg(newImg)
-    console.log(newImg);
-  }
+    ajax.deleteWine(wine.wineName)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(wine._id);
-    ajax.updateSingleWine(wine.wineName, name, description, img, wine._id)
+
   }
   // on mount
   useEffect(() => {
@@ -62,9 +38,9 @@ const SingleWine = (props) => {
       wine !== ''
       ?
       <div>
-        <Update update={props}/>
-        <Delete delete={props}/>
-        <button onClick={() => props.toggledisplay()}>Back</button>
+        <Update wine={wine}/>
+        <Delete delete={() => deleteWine()}/>
+        <button onClick={() => props.history.push(`/user`)}>Back</button>
       </div>
       :
       <h1>Loading...</h1>

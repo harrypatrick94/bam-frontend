@@ -23,27 +23,9 @@ const AddWine = (props) => {
 
   }
   const handleImg = (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     const newImg = e.target.value
     setImg(newImg)
-   //  console.log("here");
-   //  const imgFile = e.target.files[0];
-   //  console.log(imgFile);
-   //  const formData = new FormData()
-   //  formData.append("upload_preset", "BensonAndTheMooch");
-   //  formData.append("file", imgFile)
-   //  for (var key of formData.entries()) {
-   //     console.log(key[0] + ', ' + key[1]);
-   // }
-   //
-   //  axios.post('https://api.cloudinary.com/v1_1/dm0vmiksn/image/upload', formData)
-   //  .then( res => {
-   //    console.log("i got here", res.data.url);
-   //    // setImg(res.data.url)
-   //  })
-   //  .catch(err => {
-   //    console.warn("error", err)
-   //  })
 
   }
 

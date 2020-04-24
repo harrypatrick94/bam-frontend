@@ -3,13 +3,15 @@ import AddWine from './add/AddWine'
 import ajax from '../../lib/ajax'
 
 const AllWines = (props) => {
-  console.log("allWines: ", props);
   const [wines, setWines] = useState('')
 
+  const singleWine = (wine) => {
+
+    props.allWines.history.push(`user/wines/${wine}`)
+  }
   const getWines = () => {
     ajax.getAllWines()
       .then(res => {
-        console.log("all wines: ", res.data);
         setWines(res.data)
       })
       .catch(err => {
@@ -17,12 +19,6 @@ const AllWines = (props) => {
       })
   }
 
-  const singleWine = (wine) => {
-    console.log("clicked");
-    console.log(wine);
-    props.toggledisplay(wine)
-    // props.allWines.history.push(`user/${wine}`)
-  }
   useEffect(() => {
     getWines()
   }, [])

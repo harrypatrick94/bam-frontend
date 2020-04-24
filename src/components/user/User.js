@@ -3,14 +3,9 @@ import axios from 'axios'
 import SignOut from './SignOut'
 import AllWines from '../crudWines/AllWines'
 import SingleWine from '../crudWines/SingleWine'
+import AllSellers from '../crudSellers/AllSellers'
 const User = (props) => {
 
-  const [displaySingle, setDisplaySingle] = useState(false)
-  const [wineToDisplay, setWineToDisplay] = useState('')
-  const toggledisplay = (wine='') => {
-    setWineToDisplay(wine)
-    setDisplaySingle(!displaySingle)
-  }
   useEffect(() => {
     if (window.localStorage.getItem("token")) {
       const token = window.localStorage.getItem("token")
@@ -25,13 +20,11 @@ const User = (props) => {
     <div className="userContainer">
       logged in
       <div>
-      {
-        displaySingle
-        ?
-        <SingleWine singleWine={props} wine={wineToDisplay} toggledisplay={toggledisplay}/>
-        :
-        <AllWines allWines={props} toggledisplay={toggledisplay}/>
-      }
+        <div>
+        <AllWines allWines={props}/>
+        <AllSellers allSellers={props}/>
+        </div>
+
       </div>
       <div className="signOut"><SignOut signOut={props}/></div>
 
