@@ -4,6 +4,7 @@ import ajax from '../../lib/ajax'
 import Update from './update/Update'
 import Delete from '../delete/Delete'
 import "./crudWines.css"
+
 const SingleWine = (props) => {
 
   const [wine, setWine] = useState('')
@@ -23,11 +24,11 @@ const SingleWine = (props) => {
   const deleteWine = () => {
 
     ajax.deleteWine(wine.wineName)
-
-
+    props.history.push(`/user`)
   }
   // on mount
   useEffect(() => {
+    ajax.checkLogin(props)
     getWine()
 
   }, [])

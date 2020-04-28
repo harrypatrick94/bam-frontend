@@ -9,29 +9,27 @@ const AddWine = (props) => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [img, setImg] = useState('')
+  const [fizzFactor, setFizzFactor] = useState('')
 
   // ajax call get single wine
 
   const handleName = (e) => {
-    const newName = e.target.value
-    setName(newName)
+    setName(e.target.value)
 
   }
   const handleDescription = (e) => {
-    const newDescription = e.target.value
-    setDescription(newDescription)
+    setDescription(e.target.value)
 
   }
   const handleImg = (e) => {
-    e.preventDefault()
-    const newImg = e.target.value
-    setImg(newImg)
-
+    setImg(e.target.value)
   }
-
+  const handleFizz = (e) => {
+    setFizzFactor(e.target.value)
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
-    ajax.addWine(name, description, img)
+    ajax.addWine(name, description, img, fizzFactor)
     .then(res => console.log(res.data))
   }
   // on mount
@@ -42,6 +40,7 @@ const AddWine = (props) => {
   return(
     <div className="singleWineBackend">
       <form onSubmit={handleSubmit} className="editDeleteWineForm">
+        <h1>Add Wine</h1>
         <ul className="editDeleteWineUL" >
           <li className="editDeleteWineLI">
             <input type="text" placeholder="Add Wine" onChange={handleName} className="editDeleteWineInput"/>
@@ -50,7 +49,13 @@ const AddWine = (props) => {
             <input type="text" placeholder="Add description" onChange={handleDescription} className="editDeleteWineTeaxtArea"/>
           </li>
           <li className="editDeleteWineLI">
-            <input type="test" placeholder="Add image" onChange={handleImg} className="editDeleteWineInput"/>
+            <input type="text" placeholder="Add image" onChange={handleImg} className="editDeleteWineInput"/>
+          </li>
+          <li className="editDeleteWineLI">
+            <input type="radio" value="still" name="wine" onClick={handleFizz}/>
+            <label for="still">still</label>
+            <input type="radio" value="sparkling" name="wine" onClick={handleFizz}/>
+            <label for="sparkling">sparkling</label>
           </li>
           <li className="editDeleteWineLI">
             <input type="submit"/>

@@ -19,28 +19,28 @@ export default {
     const url = `${BASE_URL}/wines/${wine}`
     return axios.get(url)
   },
-  addSeller(name, description, img, link){
-    const url = `${BASE_URL}/addSeller`
+  addSeller(name, description, img, link, business){
+    const url = `${BASE_URL}/sellers/add`
     return axios.post(url, {
-      name, description, img, link
+      name, description, img, link, business
     })
   },
-  addWine(wineName, description, img){
-    const url = `${BASE_URL}/add`
+  addWine(wineName, description, img, fizzFactor){
+    const url = `${BASE_URL}/wines/add`
     return axios.post(url, {
-      wineName, description, img
+      wineName, description, img, fizzFactor
     })
   },
-  updateSingleSeller(seller, newName, newDescription, newImg, newLink, id){
-    const url = `${BASE_URL}/sellers/${seller}`
+  updateSingleSeller(newName, newDescription, newImg, newLink, newBusiness, id){
+    const url = `${BASE_URL}/sellers/update`
     return axios.put(url, {
-      newName, newDescription, newImg, newLink, id
+      newName, newDescription, newImg, newLink, newBusiness, id
     })
   },
-  updateSingleWine(wine, newName, newDescription, newImg, id){
-    const url = `${BASE_URL}/wines/${wine}`
+  updateSingleWine(newName, newDescription, newImg, newFizzFactor, id){
+    const url = `${BASE_URL}/wines/update`
     return axios.put(url, {
-      newName, newDescription, newImg, id
+      newName, newDescription, newImg, newFizzFactor, id
     })
   },
   deleteSeller(seller){
@@ -57,8 +57,15 @@ export default {
     return axios.post(url, {
       userName, password
     })
+  },
+  checkLogin(props){
+    if (window.localStorage.getItem("token")) {
+      const token = window.localStorage.getItem("token")
+      axios.defaults.headers.common['Authorization'] = token;
+    } else {
+      props.history.push("/signIn")
+    }
   }
-
 
 
 }; // export

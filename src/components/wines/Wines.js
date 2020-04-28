@@ -1,19 +1,33 @@
 import React, {useState, useEffect} from 'react';
 import ajax from '../../lib/ajax'
+import ShowWine from './ShowWine'
 import './wines.css'
 const Wines = () => {
 
-  const [wines, setWines] = useState('')
+  const [wines, setWines] = useState(false)
+  const [still, setStill] = useState([])
+  const [sparkling, setSparkling] = useState([])
 
   const getWines = () => {
     ajax.getAllWines()
       .then(res => {
-        console.log("all wines: ", res.data);
-        setWines(res.data)
+        sortWines(res.data)
       })
       .catch(err => {
         console.warn(err);
       })
+  }
+
+  const sortWines = (winesToSort) => {
+    winesToSort.map(wine => {
+      if (wine.fizzFactor === 'sparkling') {
+        setSparkling(sparkling => [...sparkling, wine])
+      } else {
+        setStill(still => [...still, wine])
+      }
+    })
+    .then(setWines(true))
+
   }
 
   useEffect(() => {
@@ -23,25 +37,16 @@ const Wines = () => {
   return (
     <div className="winesContainer" id="wines">
       {
-        wines.length > 0
+        wines
         ?
-        <ul className="wineList">
-          {
-            wines.map(wine => {
-              return(
-                <li className="winesLI" key={wine.wineName}>
-                  <h1>{wine.wineName}</h1>
-                  <img src={wine.img} alt={wine.wineName} className="wineImg"/>
-                  <p className="wineDescription">{wine.description}</p>
-                </li>
-              )
-            })
-          }
-
-        </ul>
+        <div>
+        <ShowWine wine={still} />
+        <ShowWine wine={sparkling} />
+        </div>
         :
-        <h1>loading...</h1>
+        <p>loading</p>
       }
+
     </div>
   )
 }

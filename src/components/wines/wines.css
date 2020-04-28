@@ -73,3 +73,7 @@ li.winesLI {
 .wineHeading {
   color: black;
 }
+
+.showWineHeading {
+  text-transform: uppercase;
+}

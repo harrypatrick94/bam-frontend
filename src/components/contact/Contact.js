@@ -9,16 +9,19 @@ const Contact = () => {
   const handleName = (e) => {
     let name = e.target.value
     setName(name)
+    setConfirmation(false)
   }
 
   const handleEmail = (e) => {
     let email = e.target.value
     setEmail(email)
+    setConfirmation(false)
   }
 
   const handleMessage = (e) => {
     let message = e.target.value
     setMessage(message)
+    setConfirmation(false)
   }
   const clearForm = () => {
     setName('');

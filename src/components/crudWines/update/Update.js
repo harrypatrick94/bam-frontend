@@ -8,15 +8,16 @@ const Update = (props) => {
   const [name, setName] = useState(undefined)
   const [description, setDescription] = useState(undefined)
   const [img, setImg] = useState(undefined)
+  const [fizzFactor, setFizzFactor] = useState(undefined)
   const [id, setId] = useState(undefined)
 
   const getWine = () => {
-    console.log("wine", props.wine);
-    const {wineName, description, img, _id } = props.wine
-    setAjaxName(wineName)
+    console.log(props.wine);
+    const {wineName, description, img, fizzFactor, _id } = props.wine
     setName(wineName)
     setDescription(description)
     setImg(img)
+    setFizzFactor(fizzFactor)
     setId(_id)
     setWine(true)
   }
@@ -24,21 +25,24 @@ const Update = (props) => {
   const handleName = (e) => {
     const newName = e.target.value
     setName(newName)
-    console.log(newName);
+
   }
   const handleDescription = (e) => {
     const newDescription = e.target.value
     setDescription(newDescription)
-    console.log(newDescription);
+
   }
   const handleImg = (e) => {
     const newImg = e.target.value
     setImg(newImg)
-    console.log(newImg);
+
+  }
+  const handleFizz = (e) => {
+    setFizzFactor(e.target.value)
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    ajax.updateSingleWine(ajaxName, name, description, img, id)
+    ajax.updateSingleWine(name, description, img, fizzFactor, id)
   }
   // on mount
   useEffect(() => {
@@ -65,6 +69,12 @@ const Update = (props) => {
           </li>
           <li className="editDeleteWineLI">
             <input type="text" placeholder={img} onChange={handleImg} className="editDeleteWineInput" defaultValue={img}/>
+          </li>
+          <li className="editDeleteWineLI">
+          <input type="radio" value="still" name="wine" onClick={handleFizz}/>
+          <label for="still">still</label>
+          <input type="radio" value="sparkling" name="wine" onClick={handleFizz}/>
+          <label for="sparkling">sparkling</label>
           </li>
           <li className="editDeleteWineLI">
             <input type="submit"/>

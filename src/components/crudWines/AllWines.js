@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import AddWine from './add/AddWine'
 import ajax from '../../lib/ajax'
+import './crudWines.css'
 
 const AllWines = (props) => {
   const [wines, setWines] = useState('')
@@ -24,13 +25,18 @@ const AllWines = (props) => {
   }, [])
   return(
     <div className="winesBackend">
-      <div className="winelist">
+      <div className="wineListBack">
         {
           wines.length > 0
           ?
-          <ul className="allWines">
+          <ul className="allWinesBack">
             {wines.map(wine => {
-              return (<li className="wineList" key={wine.wineName} onClick={() => singleWine(wine.wineName)}>{wine.wineName}</li>)
+              return (<li className="wineListBack"
+              key={wine.wineName}
+              onClick={() => singleWine(wine.wineName)}>
+                <h2 className="wineHeadingBack">{wine.wineName}</h2>
+                <img src={wine.img} alt={wine.wineName} className="wineImgBack"/>
+              </li>)
             })
           }
           </ul>

@@ -20,6 +20,7 @@ const SingleSeller = (props) => {
   }
 
   useEffect(() => {
+    ajax.checkLogin(props)
     getSeller()
   }, [])
 
